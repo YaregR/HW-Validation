@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require('axios');
 const multer = require('multer');
 const upload = multer();
-const validation = require('../controllers/validationSchema.js');
+const validation = require('./validationSchema.js');
 const Ajv = require('ajv');
 const ajv = new Ajv();
 
