@@ -5,7 +5,10 @@ const multer = require('multer');
 const upload = multer();
 const validation = require('./validationSchema.js');
 const Ajv = require('ajv');
+const addFormats = require("ajv-formats");
 const ajv = new Ajv();
+addFormats(ajv);
+
 
 
 /* GET home page. */
@@ -14,7 +17,7 @@ router.get('/', (req, res) => {
 });
 
 
-router.get('/main', (req, res) => {
+router.post('/main', (req, res) => {
   
   const { body } = req;
  
