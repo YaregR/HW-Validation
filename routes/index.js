@@ -16,9 +16,8 @@ router.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
 
-
-router.post('/main', (req, res) => {
-  
+router.post('/main', upload.none(), (req, res) => {
+  console.log(req.body);
   const { body } = req;
  
   const validate = ajv.compile(validation.schema);
@@ -34,5 +33,3 @@ router.post('/main', (req, res) => {
 
 
 module.exports = router;
-
-
